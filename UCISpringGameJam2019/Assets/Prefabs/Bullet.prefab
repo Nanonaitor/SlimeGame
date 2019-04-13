@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8418291868287845848}
   - component: {fileID: 8418291868287845849}
   - component: {fileID: 8418291868287845854}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8418291868287845855}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -105,10 +105,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletData:
-    Damage: 10
-    Speed: 5
-    SplitNum: 1
+    Damage: 5
+    Speed: 50
+    SplitNum: 3
+    SplitLives: 1
     SplitAngle: 30
-    SplitDelay: 3
-    DestroyDelay: 10
+    SplitDelay: 0.2
+    DestroyDelay: 5
+    IsPiercing: 1
   bulletPrefab: {fileID: 8418291868287845855}

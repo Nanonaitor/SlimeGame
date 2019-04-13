@@ -14,6 +14,7 @@ public class TestPlayer : MonoBehaviour
     {
 		fireDelay = 1f;
 		fireTimer = fireDelay;
+		//Instantiate(bullet, transform.position, transform.rotation);
 	}
 
     // Update is called once per frame
@@ -27,5 +28,5 @@ public class TestPlayer : MonoBehaviour
 			//Instantiate(bullet, transform.position, transform.rotation * Quaternion.Euler(-20, 0, 0));
 			fireTimer = fireDelay;
 		}
-    }
+	}
 }
