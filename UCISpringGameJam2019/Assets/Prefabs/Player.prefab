@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 4106969879643593652}
   - component: {fileID: 4106969879643593653}
   - component: {fileID: 4106969879643593654}
-  m_Layer: 0
+  - component: {fileID: 900104988}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -144,6 +145,22 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   healthbar: {fileID: 0}
+--- !u!54 &900104988
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4106969879643593615}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4106969879985647899
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +174,7 @@ GameObject:
   - component: {fileID: 4106969879985647878}
   - component: {fileID: 4106969879985647877}
   - component: {fileID: 4106969879985647872}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4106969881145973141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
