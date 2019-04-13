@@ -28,8 +28,11 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private float explosionRadius;
 	[Header("Homing")]
 	[SerializeField] private bool canHome;
+	[SerializeField] private Transform homingTarget;
 	[SerializeField] private float homingRadius;
 	[SerializeField] private float homingStrength;
+	[Header("Spiral")]
+	[SerializeField] private float spiralStrength;
 
     float shootTimer;
 
@@ -69,8 +72,10 @@ public class Weapon : MonoBehaviour
 			newData.CanExplode = canExplode;
 			newData.ExplosionRadius = explosionRadius;
 			newData.CanHome = canHome;
+			newData.HomingTarget = homingTarget;
 			newData.HomingRadius = homingRadius;
 			newData.HomingStrength = homingStrength;
+			newData.SpiralStrength = spiralStrength;
             newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;

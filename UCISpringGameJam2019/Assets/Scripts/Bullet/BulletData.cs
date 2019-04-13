@@ -19,8 +19,10 @@ public struct BulletData
 	public bool CanExplode;
 	public float ExplosionRadius;
 	public bool CanHome;
+	public Transform HomingTarget;
 	public float HomingRadius;
 	public float HomingStrength;
+	public float SpiralStrength;
 
 	public BulletData(BulletData bulletData)
 	{
@@ -40,7 +42,9 @@ public struct BulletData
 		CanExplode = bulletData.CanExplode;
 		ExplosionRadius = bulletData.ExplosionRadius;
 		CanHome = bulletData.CanHome;
+		HomingTarget = bulletData.HomingTarget;
 		HomingRadius = bulletData.HomingRadius;
 		HomingStrength = bulletData.HomingStrength;
+		SpiralStrength = bulletData.SpiralStrength;
 	}
 }

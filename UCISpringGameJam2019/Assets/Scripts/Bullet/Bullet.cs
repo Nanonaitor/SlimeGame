@@ -33,7 +33,7 @@ public class Bullet : PooledObject
     void Update()
     {
         transform.Translate(bulletData.BulletDirection * bulletData.Speed * Time.deltaTime);
-		transform.rotation = transform.rotation * Quaternion.Euler(0, 2.5f, 0);
+		transform.rotation = transform.rotation * Quaternion.Euler(0, bulletData.SpiralStrength, 0);
 	}
 
     private void FixedUpdate()
