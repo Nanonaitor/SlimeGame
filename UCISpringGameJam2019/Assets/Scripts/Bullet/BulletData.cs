@@ -16,6 +16,8 @@ public struct BulletData
 	public bool CanBounce;
 	public Health HealthTarget;
 	public int LeachAmount;
+	public bool CanExplode;
+	public float ExplosionRadius;
 
 	public BulletData(BulletData bulletData)
 	{
@@ -32,5 +34,7 @@ public struct BulletData
         CanBounce = bulletData.CanBounce;
 		HealthTarget = bulletData.HealthTarget;
 		LeachAmount = bulletData.LeachAmount;
+		CanExplode = bulletData.CanExplode;
+		ExplosionRadius = bulletData.ExplosionRadius;
 	}
 }

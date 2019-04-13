@@ -69,19 +69,33 @@ public class Bullet : PooledObject
     {
         if(other.CheckLayer("Enemy"))
         {
-            other.gameObject.ApplyDamage(BulletData.Damage);
+			if (bulletData.CanExplode)
+				EXXUUPLOSION();
+			else
+				other.gameObject.ApplyDamage(BulletData.Damage);
 			if (bulletData.HealthTarget != null && bulletData.LeachAmount != 0)
-			{
 				bulletData.HealthTarget.AddHealth(bulletData.LeachAmount);
-			}
             if (!bulletData.CanPierce)
                 ReturnToPool();
         }
         else if (other.CheckLayer("Environment") && !bulletData.CanBounce)
         {
-            ReturnToPool();
+			if (bulletData.CanExplode)
+				EXXUUPLOSION();
+			ReturnToPool();
         }
     }
+
+	public void EXXUUPLOSION()
+	{
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, bulletData.ExplosionRadius);
+		int i = 0;
+		while (i < hitColliders.Length)
+		{
+			hitColliders[i].gameObject.ApplyDamage(bulletData.Damage);
+			i++;
+		}
+	}
 
     void DestroyBullet()
     {

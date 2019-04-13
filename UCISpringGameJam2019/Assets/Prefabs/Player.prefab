@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4106969879643593611}
   - component: {fileID: 4106969879643593610}
   - component: {fileID: 4106969879643593609}
-  - component: {fileID: 4106969879643593608}
   - component: {fileID: 4106969879643593652}
   - component: {fileID: 4106969879643593653}
   - component: {fileID: 4106969879643593654}
@@ -83,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &4106969879643593608
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4106969879643593615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &4106969879643593652
 CharacterController:
   m_ObjectHideFlags: 0
@@ -277,6 +262,10 @@ MonoBehaviour:
   splitAngle: 35
   canPierce: 0
   canBounce: 0
+  healthTarget: {fileID: 0}
+  leachAmount: 0
+  canExplode: 0
+  explosionRadius: 0
 --- !u!1 &4106969881145973140
 GameObject:
   m_ObjectHideFlags: 0

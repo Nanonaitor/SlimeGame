@@ -23,6 +23,9 @@ public class Weapon : MonoBehaviour
 	[Header("LifeLeach")]
 	[SerializeField] private Health healthTarget;
 	[SerializeField] private int leachAmount;
+	[Header("EXXUUPLOSION")]
+	[SerializeField] private bool canExplode;
+	[SerializeField] private float explosionRadius;
 
     float shootTimer;
 
@@ -59,6 +62,8 @@ public class Weapon : MonoBehaviour
             newData.CanBounce = canBounce;
 			newData.HealthTarget = healthTarget;
 			newData.LeachAmount = leachAmount;
+			newData.CanExplode = canExplode;
+			newData.ExplosionRadius = explosionRadius;
             newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;
