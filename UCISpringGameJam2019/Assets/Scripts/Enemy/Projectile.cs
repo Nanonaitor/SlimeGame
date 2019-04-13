@@ -34,7 +34,8 @@ public class Projectile : PooledObject
     {
         if(other.CheckLayer("Player"))
         {
-            other.gameObject.ApplyDamage(damage);         
+            other.gameObject.ApplyDamage(damage);
+            ReturnToPool();
         }
         else if(other.CheckLayer("Environment"))
         {
