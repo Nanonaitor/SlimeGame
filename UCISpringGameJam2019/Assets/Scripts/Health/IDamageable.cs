@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface IDamageable
 {
-	void TakeDamage(int damageTaken);
+	void RemoveHealth(int damageTaken);
+	void AddHealth(int damageTaken);
+	void SetHealth(int newHealth);
 }
 
 public static class DamageHelper
@@ -14,6 +16,6 @@ public static class DamageHelper
 		var receivers = receiver.GetComponents<IDamageable>();
 		if (receivers != null)
 			for (int i = 0; i < receivers.Length; i++)
-				receivers[i].TakeDamage(damage);
+				receivers[i].RemoveHealth(damage);
 	}
 }

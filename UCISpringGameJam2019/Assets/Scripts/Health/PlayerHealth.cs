@@ -13,9 +13,9 @@ public class PlayerHealth : Health
         healthbar.localScale = new Vector3(healthPercent, 1, 1);
     }
 
-    public override void TakeDamage(int damageTaken)
+    public override void RemoveHealth(int damageTaken)
     {
-        base.TakeDamage(damageTaken);
+        base.RemoveHealth(damageTaken);
         
         if(CurrentHealth <= 0)
         {

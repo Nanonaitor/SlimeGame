@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    public override void TakeDamage(int damageTaken)
+    public override void RemoveHealth(int damageTaken)
     {
-        base.TakeDamage(damageTaken);
+        base.RemoveHealth(damageTaken);
 
         if (CurrentHealth <= 0)
         {
