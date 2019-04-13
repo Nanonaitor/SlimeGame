@@ -26,6 +26,10 @@ public class Weapon : MonoBehaviour
 	[Header("EXXUUPLOSION")]
 	[SerializeField] private bool canExplode;
 	[SerializeField] private float explosionRadius;
+	[Header("Homing")]
+	[SerializeField] private bool canHome;
+	[SerializeField] private float homingRadius;
+	[SerializeField] private float homingStrength;
 
     float shootTimer;
 
@@ -64,6 +68,9 @@ public class Weapon : MonoBehaviour
 			newData.LeachAmount = leachAmount;
 			newData.CanExplode = canExplode;
 			newData.ExplosionRadius = explosionRadius;
+			newData.CanHome = canHome;
+			newData.HomingRadius = homingRadius;
+			newData.HomingStrength = homingStrength;
             newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;
