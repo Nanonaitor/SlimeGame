@@ -53,6 +53,7 @@ public class Weapon : MonoBehaviour
             newData.SplitLives = splitLives;
             newData.SplitNum = splitNum;
             newData.IsPiercing = canPierce;
+            newData.IsBouncy = canBounce;
             newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;

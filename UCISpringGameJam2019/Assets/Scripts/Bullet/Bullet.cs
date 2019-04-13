@@ -6,21 +6,18 @@ public class Bullet : PooledObject
 {
     [SerializeField] private BulletData bulletData;
     public BulletData BulletData { get => bulletData; set => bulletData = value; }
-    [SerializeField] private PooledObject bulletPrefab;
-    private Vector3 bulletDirection;
-
+    private PooledObject bulletPrefab;
     public PooledObject BulletPrefab { get => bulletPrefab; set => bulletPrefab = value; }
-
-    void Start()
-    {
-        bulletDirection = Vector3.forward;
-    }
 
     public void StartBullet()
     {
         if (gameObject.activeSelf)
         {
-            StartCoroutine(DelayedDestroyBullet());
+            bulletData.BulletDirection = Vector3.forward;
+
+            if (bulletData.DestroyDelay > 0)
+                StartCoroutine(DelayedDestroyBullet());
+
             if (bulletData.SplitNum != 1 && bulletData.SplitLives != 0)
             {
                 StartCoroutine(DelayedSplitBullet());
@@ -35,19 +32,22 @@ public class Bullet : PooledObject
 
     void Update()
     {
-        transform.Translate(bulletDirection * bulletData.Speed * Time.deltaTime);
+        transform.Translate(bulletData.BulletDirection * bulletData.Speed * Time.deltaTime);
     }
 
     private void FixedUpdate()
     {
-        LayerMask mask = LayerMask.GetMask("Environment");
-        RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * (Time.deltaTime * bulletData.Speed + 1.2f), Color.blue);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Time.deltaTime * bulletData.Speed + 1.2f, mask))
+        if(bulletData.IsBouncy)
         {
-            Vector3 reflectDir = Vector3.Reflect(transform.TransformDirection(Vector3.forward), hit.normal);
-            float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
-            transform.eulerAngles = new Vector3(0, rot, 0);
+            LayerMask mask = LayerMask.GetMask("Environment");
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * (Time.deltaTime * bulletData.Speed + 1.2f), Color.blue);
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Time.deltaTime * bulletData.Speed + 1.2f, mask))
+            {
+                Vector3 reflectDir = Vector3.Reflect(transform.TransformDirection(Vector3.forward), hit.normal);
+                float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
+                transform.eulerAngles = new Vector3(0, rot, 0);
+            }
         }
     }
 
@@ -67,14 +67,16 @@ public class Bullet : PooledObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CheckLayer("Environment"))
+        if(other.CheckLayer("Enemy"))
         {
-            //Destroy(gameObject);
+            other.gameObject.ApplyDamage(BulletData.Damage);
+            if (!bulletData.IsPiercing)
+                ReturnToPool();
         }
-
-        other.gameObject.ApplyDamage(BulletData.Damage);
-        if (!bulletData.IsPiercing)
+        else if (other.CheckLayer("Environment") && !bulletData.IsBouncy)
+        {
             ReturnToPool();
+        }
     }
 
     void DestroyBullet()

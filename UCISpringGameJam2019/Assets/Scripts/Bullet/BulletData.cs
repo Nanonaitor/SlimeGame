@@ -4,6 +4,7 @@
 public struct BulletData
 {
 	public int Damage;
+    public Vector3 BulletDirection;
 	public float Speed;
 	public int SplitNum;
 	public int SplitLives;
@@ -11,10 +12,12 @@ public struct BulletData
 	public float SplitDelay;
 	public float DestroyDelay;
 	public bool IsPiercing;
+    public bool IsBouncy;
 
 	public BulletData(BulletData bulletData)
 	{
 		Damage = bulletData.Damage;
+        BulletDirection = bulletData.BulletDirection;
 		Speed = bulletData.Speed;
 		SplitNum = bulletData.SplitNum;
 		SplitLives = bulletData.SplitLives;
@@ -22,5 +25,6 @@ public struct BulletData
 		SplitDelay = bulletData.SplitDelay;
 		DestroyDelay = bulletData.DestroyDelay;
 		IsPiercing = bulletData.IsPiercing;
+        IsBouncy = bulletData.IsBouncy;
 	}
 }
