@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BryanScene.unity
+    guid: 7d500fe1d069ac149850517bc4b22f0f
   m_configObjects: {}

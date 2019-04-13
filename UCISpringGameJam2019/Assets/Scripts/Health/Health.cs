@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour, IDamageable
+public abstract class Health : MonoBehaviour, IDamageable
 {
 	[SerializeField] private int health;
 	[SerializeField] private int maxHealth;
@@ -12,7 +12,7 @@ public class Health : MonoBehaviour, IDamageable
 		health = maxHealth;
     }
 
-	public void TakeDamage(int damageTaken)
+	public virtual void TakeDamage(int damageTaken)
 	{
 		health -= damageTaken;
 		if (health <= 0)
