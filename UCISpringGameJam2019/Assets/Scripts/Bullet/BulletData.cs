@@ -18,6 +18,9 @@ public struct BulletData
 	public int LeachAmount;
 	public bool CanExplode;
 	public float ExplosionRadius;
+	public bool CanHome;
+	public float HomingRadius;
+	public float HomingStrength;
 
 	public BulletData(BulletData bulletData)
 	{
@@ -36,5 +39,8 @@ public struct BulletData
 		LeachAmount = bulletData.LeachAmount;
 		CanExplode = bulletData.CanExplode;
 		ExplosionRadius = bulletData.ExplosionRadius;
+		CanHome = bulletData.CanHome;
+		HomingRadius = bulletData.HomingRadius;
+		HomingStrength = bulletData.HomingStrength;
 	}
 }
