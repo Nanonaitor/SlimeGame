@@ -18,11 +18,15 @@ public abstract class Health : MonoBehaviour, IDamageable
     public virtual void RemoveHealth(int damageTaken)
 	{
 		health -= damageTaken;
+		if (health < 0)
+			health = 0;
 	}
 
 	public virtual void AddHealth(int damageTaken)
 	{
 		health += damageTaken;
+		if (health > maxHealth)
+			health = maxHealth;
 	}
 
 	public virtual void SetHealth(int newHealth)

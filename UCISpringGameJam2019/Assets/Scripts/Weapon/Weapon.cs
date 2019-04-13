@@ -20,6 +20,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private bool canPierce;
     [Header("Bouncing")]
     [SerializeField] private bool canBounce;
+	[Header("LifeLeach")]
+	[SerializeField] private Health healthTarget;
+	[SerializeField] private int leachAmount;
 
     float shootTimer;
 
@@ -52,8 +55,10 @@ public class Weapon : MonoBehaviour
             newData.SplitAngle = splitAngle;
             newData.SplitLives = splitLives;
             newData.SplitNum = splitNum;
-            newData.IsPiercing = canPierce;
-            newData.IsBouncy = canBounce;
+            newData.CanPierce = canPierce;
+            newData.CanBounce = canBounce;
+			newData.HealthTarget = healthTarget;
+			newData.LeachAmount = leachAmount;
             newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;

@@ -12,8 +12,10 @@ public struct BulletData
 	public float SplitAngle;
 	public float SplitDelay;
 	public float DestroyDelay;
-	public bool IsPiercing;
-    public bool IsBouncy;
+	public bool CanPierce;
+	public bool CanBounce;
+	public Health HealthTarget;
+	public int LeachAmount;
 
 	public BulletData(BulletData bulletData)
 	{
@@ -26,7 +28,9 @@ public struct BulletData
 		SplitAngle = bulletData.SplitAngle;
 		SplitDelay = bulletData.SplitDelay;
 		DestroyDelay = bulletData.DestroyDelay;
-		IsPiercing = bulletData.IsPiercing;
-        IsBouncy = bulletData.IsBouncy;
+		CanPierce = bulletData.CanPierce;
+        CanBounce = bulletData.CanBounce;
+		HealthTarget = bulletData.HealthTarget;
+		LeachAmount = bulletData.LeachAmount;
 	}
 }

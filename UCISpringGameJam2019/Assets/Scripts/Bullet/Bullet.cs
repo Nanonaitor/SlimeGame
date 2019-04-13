@@ -37,7 +37,7 @@ public class Bullet : PooledObject
 
     private void FixedUpdate()
     {
-        if(bulletData.IsBouncy)
+        if(bulletData.CanBounce)
         {
             LayerMask mask = LayerMask.GetMask("Environment");
             RaycastHit hit;
@@ -70,10 +70,14 @@ public class Bullet : PooledObject
         if(other.CheckLayer("Enemy"))
         {
             other.gameObject.ApplyDamage(BulletData.Damage);
-            if (!bulletData.IsPiercing)
+			if (bulletData.HealthTarget != null && bulletData.LeachAmount != 0)
+			{
+				bulletData.HealthTarget.AddHealth(bulletData.LeachAmount);
+			}
+            if (!bulletData.CanPierce)
                 ReturnToPool();
         }
-        else if (other.CheckLayer("Environment") && !bulletData.IsBouncy)
+        else if (other.CheckLayer("Environment") && !bulletData.CanBounce)
         {
             ReturnToPool();
         }
