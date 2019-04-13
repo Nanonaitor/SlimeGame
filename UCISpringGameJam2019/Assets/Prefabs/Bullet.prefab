@@ -106,11 +106,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletData:
     Damage: 5
+    bulletDirection: {x: 0, y: 0, z: 0}
     Speed: 50
     SplitNum: 3
     SplitLives: 1
     SplitAngle: 30
     SplitDelay: 0.2
     DestroyDelay: 5
-    IsPiercing: 1
-  bulletPrefab: {fileID: 0}
+    IsPiercing: 0
+    IsBouncy: 1
+  bulletPrefab: {fileID: 8418291868287845855}
