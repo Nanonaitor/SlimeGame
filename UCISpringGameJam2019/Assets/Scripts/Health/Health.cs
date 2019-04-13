@@ -7,17 +7,21 @@ public abstract class Health : MonoBehaviour, IDamageable
 	[SerializeField] private int health;
 	[SerializeField] private int maxHealth;
 
+    public int CurrentHealth { get => health; set => health = value; }
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+
     void Start()
     {
 		health = maxHealth;
     }
 
-	public virtual void TakeDamage(int damageTaken)
+    public virtual void TakeDamage(int damageTaken)
 	{
 		health -= damageTaken;
-		if (health <= 0)
-		{
-			Destroy(gameObject);
-		}
 	}
+
+    public virtual void SetHealth(int newHealth)
+    {
+        health = newHealth;
+    }
 }
