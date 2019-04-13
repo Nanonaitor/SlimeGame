@@ -14,12 +14,13 @@ public class AI : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private float attackRange;
 
     float attackTimer;
 
     void Start()
     {
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform; //Get rid of this later, implementation of EnemySpawner will reference the player to the enemy to avoid so many calls.
         }
@@ -29,21 +30,28 @@ public class AI : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        if(player)
+        if (Vector3.Distance(player.position, transform.position) <= attackRange)
         {
-            Vector3 relativeDir = player.position - transform.position;
-            Quaternion newRot = Quaternion.LookRotation(relativeDir, Vector3.up);
-            newRot.x = 0;
-            newRot.z = 0;
-            transform.rotation = newRot;
+            if (player)
+            {
+                Vector3 relativeDir = player.position - transform.position;
+                Quaternion newRot = Quaternion.LookRotation(relativeDir, Vector3.up);
+                newRot.x = 0;
+                newRot.z = 0;
+                transform.rotation = newRot;
+            }
+
+            ShootProjectile();
         }
 
-        ShootProjectile();
+        Vector3 debugStart = transform.position;
+        debugStart.y = 1;
+        Debug.DrawRay(debugStart, transform.forward * attackRange, Color.red);
     }
 
     void ShootProjectile()
     {
-        if(attackTimer >= attackSpeed)
+        if (attackTimer >= attackSpeed)
         {
             attackTimer = 0;
 
