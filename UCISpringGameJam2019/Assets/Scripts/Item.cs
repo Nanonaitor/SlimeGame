@@ -20,4 +20,9 @@ public class Item : MonoBehaviour
 		}
 		Destroy(gameObject);
 	}
+
+	private void Update()
+	{
+		transform.Rotate(new Vector3(0, 45 * Time.deltaTime, 0));		
+	}
 }
