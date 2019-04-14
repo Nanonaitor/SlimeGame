@@ -36,7 +36,7 @@ public class Item : MonoBehaviour
 		Debug.Log("trigger");
 		if (other.CheckLayer("Player"))
 		{
-			other.GetComponentInChildren<Weapon>().CanBounce = true;
+			//other.GetComponentInChildren<Weapon>().CanBounce = true;
 		}
 		Destroy(gameObject);
 	}

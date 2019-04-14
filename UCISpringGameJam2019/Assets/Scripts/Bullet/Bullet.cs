@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : PooledObject
 {
-    [SerializeField] private BulletData bulletData;
-    public BulletData BulletData { get => bulletData; set => bulletData = value; }
+    [SerializeField] private WeaponData weaponData;
+    public WeaponData BulletData { get => weaponData; set => weaponData = value; }
     private PooledObject bulletPrefab;
     public PooledObject BulletPrefab { get => bulletPrefab; set => bulletPrefab = value; }
 
@@ -13,26 +13,26 @@ public class Bullet : PooledObject
     {
         if (gameObject.activeSelf)
         {
-            bulletData.BulletDirection = Vector3.forward;
+            weaponData.BulletDirection = Vector3.forward;
 
-            if (bulletData.DestroyDelay > 0)
+            if (weaponData.DestroyDelay > 0)
                 StartCoroutine(DelayedDestroyBullet());
 
-            if (bulletData.SplitNum != 1 && bulletData.SplitLives != 0)
+            if (weaponData.SplitNum != 1 && weaponData.SplitLives != 0)
             {
                 StartCoroutine(DelayedSplitBullet());
             }
         }
     }
 
-    public void InitBullet(BulletData newData)
+    public void InitBullet(WeaponData newData)
     {
-        bulletData = new BulletData(newData);
+        weaponData = new WeaponData(newData);
     }
 
     void Update()
     {
-        transform.Translate(bulletData.BulletDirection * bulletData.Speed * Time.deltaTime);
+        transform.Translate(weaponData.BulletDirection * weaponData.BulletSpeed * Time.deltaTime);
 		if (BulletData.CanHome && BulletData.HomingTarget != null)
 		{
 			if (Vector3.Distance(transform.position, BulletData.HomingTarget.position) < 2)
@@ -43,25 +43,25 @@ public class Bullet : PooledObject
 			{
 				Vector3 direction = (BulletData.HomingTarget.position - transform.position).normalized;
 				Quaternion lookRotation = Quaternion.LookRotation(direction);
-				transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * bulletData.HomingStrength);
+				transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * weaponData.HomingStrength);
 			}
 		}
 		else
 		{
-			transform.rotation = transform.rotation * Quaternion.Euler(0, bulletData.SpiralStrength, 0);
+			transform.rotation = transform.rotation * Quaternion.Euler(0, weaponData.SpiralStrength, 0);
 		}
 	}
 
     private void FixedUpdate()
     {
-		if (bulletData.CanHome && bulletData.HomingTarget == null)
+		if (weaponData.CanHome && weaponData.HomingTarget == null)
 			GetHomingTarget();
-        if(bulletData.CanBounce)
+        if(weaponData.CanBounce)
         {
             LayerMask mask = LayerMask.GetMask("Environment");
             RaycastHit hit;
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * (Time.deltaTime * bulletData.Speed + 1.2f), Color.blue);
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Time.deltaTime * bulletData.Speed + 1.2f, mask))
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * (Time.deltaTime * weaponData.BulletSpeed + 1.2f), Color.blue);
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Time.deltaTime * weaponData.BulletSpeed + 1.2f, mask))
             {
                 Vector3 reflectDir = Vector3.Reflect(transform.TransformDirection(Vector3.forward), hit.normal);
                 float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
@@ -88,18 +88,19 @@ public class Bullet : PooledObject
     {
         if(other.CheckLayer("Enemy"))
         {
-			if (bulletData.CanExplode)
+			Debug.Log("hit enemy");
+			if (weaponData.CanExplode)
 				EXXUUPLOSION();
 			else
 				other.gameObject.ApplyDamage(BulletData.Damage);
-			if (bulletData.HealthTarget != null && bulletData.LeachAmount != 0)
-				bulletData.HealthTarget.AddHealth(bulletData.LeachAmount);
-            if (!bulletData.CanPierce)
+			if (weaponData.HealthTarget != null && weaponData.LeachAmount != 0)
+				weaponData.HealthTarget.AddHealth(weaponData.LeachAmount);
+            if (!weaponData.CanPierce)
                 ReturnToPool();
         }
-        else if (other.CheckLayer("Environment") && !bulletData.CanBounce)
+        else if (other.CheckLayer("Environment") && !weaponData.CanBounce)
         {
-			if (bulletData.CanExplode)
+			if (weaponData.CanExplode)
 				EXXUUPLOSION();
 			ReturnToPool();
         }
@@ -107,7 +108,7 @@ public class Bullet : PooledObject
 
 	private void GetHomingTarget()
 	{
-		Collider[] hitColliders = Physics.OverlapSphere(transform.position, bulletData.HomingRadius);
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, weaponData.HomingRadius);
 		int i = 0;
 		while (i < hitColliders.Length)
 		{
@@ -116,11 +117,11 @@ public class Bullet : PooledObject
 				if (BulletData.HomingTarget != null)
 				{
 					if (Vector3.Distance(transform.position, hitColliders[i].transform.position) < Vector3.Distance(transform.position, BulletData.HomingTarget.position))
-						bulletData.HomingTarget = hitColliders[i].transform;
+						weaponData.HomingTarget = hitColliders[i].transform;
 				}
 				else
 				{
-					bulletData.HomingTarget = hitColliders[i].transform;
+					weaponData.HomingTarget = hitColliders[i].transform;
 				}
 			}
 			i++;
@@ -129,11 +130,11 @@ public class Bullet : PooledObject
 
 	public void EXXUUPLOSION()
 	{
-		Collider[] hitColliders = Physics.OverlapSphere(transform.position, bulletData.ExplosionRadius);
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, weaponData.ExplosionRadius);
 		int i = 0;
 		while (i < hitColliders.Length)
 		{
-			hitColliders[i].gameObject.ApplyDamage(bulletData.Damage);
+			hitColliders[i].gameObject.ApplyDamage(weaponData.Damage);
 			i++;
 		}
 	}
@@ -146,11 +147,11 @@ public class Bullet : PooledObject
 
     IEnumerator DelayedSplitBullet()
     {
-        yield return new WaitForSeconds(bulletData.SplitDelay);
-        float initialAngle = -bulletData.SplitAngle / 2;
-        float stepAngle = bulletData.SplitAngle / (bulletData.SplitNum - 1);
-        bulletData.SplitLives -= 1;
-        for (int i = 0; i < bulletData.SplitNum; ++i)
+        yield return new WaitForSeconds(weaponData.SplitDelay);
+        float initialAngle = -weaponData.SplitAngle / 2;
+        float stepAngle = weaponData.SplitAngle / (weaponData.SplitNum - 1);
+        weaponData.SplitLives -= 1;
+        for (int i = 0; i < weaponData.SplitNum; ++i)
         {
             var splitBullet = bulletPrefab.GetPooledInstance<PooledObject>();
             splitBullet.transform.position = transform.position;
@@ -159,7 +160,7 @@ public class Bullet : PooledObject
 
             Bullet b = splitBullet.GetComponent<Bullet>();
             b.BulletPrefab = BulletPrefab;
-            b.InitBullet(bulletData);
+            b.InitBullet(weaponData);
             b.StartBullet();
         }
         OnBulletDestroyed();
@@ -167,7 +168,7 @@ public class Bullet : PooledObject
 
     IEnumerator DelayedDestroyBullet()
     {
-        yield return new WaitForSeconds(bulletData.DestroyDelay);
+        yield return new WaitForSeconds(weaponData.DestroyDelay);
         OnBulletDestroyed();
     }
 }
