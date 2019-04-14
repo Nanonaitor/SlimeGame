@@ -1131,6 +1131,7 @@ MonoBehaviour:
   - {fileID: 7564388860565338413, guid: 323bd4b8f0104e841916aeea6a13bedc, type: 3}
   - {fileID: 668502017709521537, guid: ed138d8fc91dcfe4b99e0465f211a9f8, type: 3}
   - {fileID: 8689732810473008690, guid: e35bb04decba0794caa518fd76a0eb79, type: 3}
+  - {fileID: 6841220387395073479, guid: 43d4ffe1aef617c48b2b6091a1fbe362, type: 3}
   rareItems:
   - {fileID: 8157885826559277217, guid: 6a89b438d37e0bb4187969a2fd37eca9, type: 3}
   - {fileID: 4292200469127030939, guid: aa70953f800ed2845abf895acfbb9463, type: 3}
@@ -1375,6 +1376,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3230947107392048661}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2018526615
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4664599566927197329, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_Name
+      value: Ice Cream (homing)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6010675
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664599566927197322, guid: fe676a9a9e8cf7d4bb1f1b99216d3486,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe676a9a9e8cf7d4bb1f1b99216d3486, type: 3}
 --- !u!4 &2087112921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7564388860565338400, guid: 323bd4b8f0104e841916aeea6a13bedc,

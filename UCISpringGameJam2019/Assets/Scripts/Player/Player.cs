@@ -11,10 +11,12 @@ public class Player : MonoBehaviour
 
     private LayerMask groundMask;
 
-    void Start()
+	public PlayerMotor Motor { get => motor; set => motor = value; }
+
+	void Start()
     {
         controller = GetComponent<CharacterController>();
-        motor = new PlayerMotor(controller, motor, transform);
+        Motor = new PlayerMotor(controller, Motor, transform);
 
         groundMask = LayerMask.GetMask("Ground");
     }
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        motor.Move(Time.deltaTime, horizontal, vertical);
+        Motor.Move(Time.deltaTime, horizontal, vertical);
         RotateToMouse();
 
         if (Input.GetMouseButton(0))

@@ -36,7 +36,7 @@ public class Bullet : PooledObject
         transform.Translate(weaponData.BulletDirection * weaponData.BulletSpeed * Time.deltaTime);
 		if (WeaponData.CanHome && WeaponData.HomingTarget != null)
 		{
-			if (Vector3.Distance(transform.position, WeaponData.HomingTarget.position) < 2)
+			if (Vector3.Distance(transform.position, WeaponData.HomingTarget.position) < 3)
 			{
 				transform.LookAt(WeaponData.HomingTarget);
 			}
