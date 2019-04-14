@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : Health
 {
     public RectTransform healthbar;
+    public Animator anim;
 
     void UpdateHealthUI(int health, int maxHealth)
     {
@@ -17,6 +18,8 @@ public class PlayerHealth : Health
     public override void RemoveHealth(int damageTaken)
     {
         base.RemoveHealth(damageTaken);
+
+        anim.SetTrigger("HurtFront");
         
         if(CurrentHealth <= 0)
         {

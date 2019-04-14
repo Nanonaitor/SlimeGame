@@ -131,6 +131,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   healthbar: {fileID: 0}
+  anim: {fileID: 3421467163219565027}
 --- !u!54 &1694933566005775912
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -410,6 +411,12 @@ PrefabInstance:
 --- !u!4 &3421467163226764853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400054, guid: ea2660e7026b05f46a9939d93e8b72ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3421467163226893443}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3421467163219565027 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: ea2660e7026b05f46a9939d93e8b72ca,
     type: 3}
   m_PrefabInstance: {fileID: 3421467163226893443}
   m_PrefabAsset: {fileID: 0}
