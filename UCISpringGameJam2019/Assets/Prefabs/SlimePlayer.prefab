@@ -252,21 +252,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181782f481ec860499a2da53efcc8335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8418291868287845854, guid: 130f00ef9b1d6bc4cb660fa36295156f, type: 3}
+  bullet: {fileID: 5602735258424048687, guid: a1fe9225eaf4f154b89518154c22d3f2, type: 3}
   shootPoint: {fileID: 3421467163026822305}
-  damage: 25
-  attackSpeed: 0.4
-  bulletSpeed: 25
-  splitNum: 3
-  splitDelay: 0.75
-  splitLives: 3
-  splitAngle: 35
-  canPierce: 0
-  canBounce: 0
-  healthTarget: {fileID: 0}
-  leachAmount: 0
-  canExplode: 0
-  explosionRadius: 0
+  initialWeaponData:
+    Damage: 1
+    BulletDirection: {x: 0, y: 0, z: 0}
+    AttackSpeed: 1
+    BulletSpeed: 15
+    InitialBulletSize: {x: 0.45, y: 0.45, z: 0.45}
+    BulletSize: 1
+    SplitNum: 1
+    SplitLives: 1
+    SplitAngle: 15
+    SplitDelay: 8
+    CanPierce: 0
+    PierceNum: 0
+    CanBounce: 0
+    BounceNum: 0
+    HealthTarget: {fileID: 3421467162264278658}
+    LeachAmount: 0
+    CanExplode: 0
+    ExplosionRadius: 0
+    CanHome: 0
+    HomingTarget: {fileID: 0}
+    HomingRadius: 2.5
+    HomingStrength: 2.5
+    SpiralStrength: 0
+    DestroyDelay: 15
+  currentWeaponData:
+    Damage: 5
+    BulletDirection: {x: 0, y: 0, z: 0}
+    AttackSpeed: 0
+    BulletSpeed: 0
+    InitialBulletSize: {x: 0, y: 0, z: 0}
+    BulletSize: 0
+    SplitNum: 0
+    SplitLives: 0
+    SplitAngle: 0
+    SplitDelay: 0
+    CanPierce: 0
+    PierceNum: 0
+    CanBounce: 0
+    BounceNum: 0
+    HealthTarget: {fileID: 0}
+    LeachAmount: 0
+    CanExplode: 0
+    ExplosionRadius: 0
+    CanHome: 0
+    HomingTarget: {fileID: 0}
+    HomingRadius: 0
+    HomingStrength: 0
+    SpiralStrength: 0
+    DestroyDelay: 0
 --- !u!1 &3421467163026822304
 GameObject:
   m_ObjectHideFlags: 0

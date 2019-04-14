@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4413982e1f6d146b6feca80f144955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyProjectile: {fileID: 5117879704003603839, guid: 30f2239f8af653347a6580801b46e93f,
+  enemyProjectile: {fileID: 5117879704003603839, guid: 2a11ee6bf038b814db57048acb40ff57,
     type: 3}
   shootPoint: {fileID: 2608844138786870102}
   damage: 10
