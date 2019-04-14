@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestItemSpawner : MonoBehaviour
+public class ItemSpawner : MonoBehaviour
 {
 	[SerializeField] private List<GameObject> commonItems;
 	[SerializeField] private List<GameObject> rareItems;
