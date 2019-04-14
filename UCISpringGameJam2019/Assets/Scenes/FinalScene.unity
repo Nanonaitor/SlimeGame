@@ -16402,16 +16402,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3421467162264278658, guid: fc4688746850a9244ba9e9db1fc12c08,
-        type: 3}
-      propertyPath: healthbar
-      value: 
-      objectReference: {fileID: 1817285105}
-    - target: {fileID: 3421467162264278658, guid: fc4688746850a9244ba9e9db1fc12c08,
-        type: 3}
-      propertyPath: healthbar
-      value: 
-      objectReference: {fileID: 1817285105}
     - target: {fileID: 3421467162264278656, guid: fc4688746850a9244ba9e9db1fc12c08,
         type: 3}
       propertyPath: m_Radius
@@ -16422,6 +16412,16 @@ PrefabInstance:
       propertyPath: motor.speed
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3421467162264278658, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1817285105}
+    - target: {fileID: 3421467162264278658, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1817285105}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4688746850a9244ba9e9db1fc12c08, type: 3}
 --- !u!4 &2134332297 stripped

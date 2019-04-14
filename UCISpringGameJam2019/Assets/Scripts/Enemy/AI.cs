@@ -103,6 +103,7 @@ public class AI : MonoBehaviour
             attackTimer = 0;
 
             var p = enemyProjectile.GetPooledInstance<PooledObject>();
+
             p.transform.position = shootPoint.transform.position;
             p.transform.rotation = shootPoint.transform.rotation;
 

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyProjectile: {fileID: 5117879704003603839, guid: 2a11ee6bf038b814db57048acb40ff57,
     type: 3}
-  shootPoint: {fileID: 0}
+  shootPoint: {fileID: 9189950005833702424}
   damage: 10
   attackSpeed: 1
   bulletSpeed: 5
@@ -1154,7 +1154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9189950005833702427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.857}
+  m_LocalPosition: {x: 0, y: 0, z: 5.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9189950006867623008}
