@@ -34,10 +34,25 @@ public class Bullet : PooledObject
     {
         transform.Translate(bulletData.BulletDirection * bulletData.Speed * Time.deltaTime);
 		transform.rotation = transform.rotation * Quaternion.Euler(0, bulletData.SpiralStrength, 0);
+		if (BulletData.CanHome && BulletData.HomingTarget != null)
+		{
+			if (Vector3.Distance(transform.position, BulletData.HomingTarget.position) < 2)
+			{
+				transform.LookAt(BulletData.HomingTarget);
+			}
+			else
+			{
+				Vector3 direction = (BulletData.HomingTarget.position - transform.position).normalized;
+				Quaternion lookRotation = Quaternion.LookRotation(direction);
+				transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * bulletData.HomingStrength);
+			}
+		}
 	}
 
     private void FixedUpdate()
     {
+		if (bulletData.CanHome && bulletData.HomingTarget == null)
+			GetHomingTarget();
         if(bulletData.CanBounce)
         {
             LayerMask mask = LayerMask.GetMask("Environment");
@@ -86,6 +101,28 @@ public class Bullet : PooledObject
 			ReturnToPool();
         }
     }
+
+	private void GetHomingTarget()
+	{
+		Collider[] hitColliders = Physics.OverlapSphere(transform.position, bulletData.HomingRadius);
+		int i = 0;
+		while (i < hitColliders.Length)
+		{
+			if (hitColliders[i].CheckLayer("Enemy"))
+			{
+				if (BulletData.HomingTarget != null)
+				{
+					if (Vector3.Distance(transform.position, hitColliders[i].transform.position) < Vector3.Distance(transform.position, BulletData.HomingTarget.position))
+						bulletData.HomingTarget = hitColliders[i].transform;
+				}
+				else
+				{
+					bulletData.HomingTarget = hitColliders[i].transform;
+				}
+			}
+			i++;
+		}
+	}
 
 	public void EXXUUPLOSION()
 	{
