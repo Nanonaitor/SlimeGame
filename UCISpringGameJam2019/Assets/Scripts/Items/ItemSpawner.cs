@@ -30,7 +30,7 @@ public class ItemSpawner : MonoBehaviour
 		}
 	}
 
-	private void SpawnItem(Vector3 position, Quaternion rotation)
+	public void SpawnItem(Vector3 position, Quaternion rotation)
 	{
 		diceRoll = Random.Range(0, 100);
 		if (diceRoll > 90)
