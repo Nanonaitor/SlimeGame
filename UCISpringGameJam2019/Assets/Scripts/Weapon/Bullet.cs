@@ -147,7 +147,7 @@ public class Bullet : PooledObject
 
     IEnumerator DelayedSplitBullet()
     {
-        yield return new WaitForSeconds(weaponData.SplitDelay);
+        yield return new WaitForSeconds(weaponData.SplitDelay / weaponData.BulletSpeed);
         float initialAngle = -weaponData.SplitAngle / 2;
         float stepAngle = weaponData.SplitAngle / (weaponData.SplitNum - 1);
         weaponData.SplitLives -= 1;

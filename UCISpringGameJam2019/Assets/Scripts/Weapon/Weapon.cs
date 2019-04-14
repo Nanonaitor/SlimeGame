@@ -63,7 +63,6 @@ public class Weapon : MonoBehaviour
 			currentWeaponData.SplitNum += item.SplitNum;
 			currentWeaponData.SplitLives += item.SplitLives;
 			currentWeaponData.SplitAngle += item.SplitAngle;
-			currentWeaponData.SplitDelay *= item.SplitDelay;
 			currentWeaponData.LeachAmount += item.LeachAmount;
 			if (item.CanPierce)
 				currentWeaponData.CanPierce = true;
