@@ -11,9 +11,9 @@ public class Player : MonoBehaviour
 
     private LayerMask groundMask;
 
-	public PlayerMotor Motor { get => motor; set => motor = value; }
+    public PlayerMotor Motor { get => motor; set => motor = value; }
 
-	void Start()
+    void Start()
     {
         controller = GetComponent<CharacterController>();
         Motor = new PlayerMotor(controller, Motor, transform);
@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             if (weapon != null)
+            {
                 weapon.Shoot();
+            }
+
         }
     }
 

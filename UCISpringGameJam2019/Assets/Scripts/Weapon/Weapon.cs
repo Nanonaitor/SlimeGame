@@ -9,6 +9,9 @@ public class Weapon : MonoBehaviour
 
     float shootTimer;
 
+    private AudioSource myAudio;
+    public AudioClip pewShot;
+
 	[SerializeField] private WeaponData initialWeaponData;
 	[SerializeField] private WeaponData currentWeaponData;
 	public WeaponData WeaponData { get => initialWeaponData; set => initialWeaponData = value; }
@@ -23,6 +26,8 @@ public class Weapon : MonoBehaviour
 		initialWeaponData = new WeaponData(initialWeaponData);
 		currentWeaponData = WeaponData;
         shootTimer = currentWeaponData.AttackSpeed;
+
+        myAudio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -34,6 +39,7 @@ public class Weapon : MonoBehaviour
     {
         if(shootTimer >= currentWeaponData.AttackSpeed)
         {
+            myAudio.PlayOneShot(pewShot);
             shootTimer = 0;
 
             var projectile = bullet.GetPooledInstance<PooledObject>();
