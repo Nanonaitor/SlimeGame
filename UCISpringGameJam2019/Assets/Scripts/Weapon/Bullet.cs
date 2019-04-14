@@ -117,7 +117,7 @@ public class Bullet : PooledObject
 		{
 			if (hitColliders[i].CheckLayer("Enemy"))
 			{
-				if (WeaponData.HomingTarget != null)
+				if (WeaponData.HomingTarget != null && WeaponData.HomingTarget.GetComponent<AI>().ready)
 				{
 					if (Vector3.Distance(transform.position, hitColliders[i].transform.position) < Vector3.Distance(transform.position, WeaponData.HomingTarget.position))
 						weaponData.HomingTarget = hitColliders[i].transform;

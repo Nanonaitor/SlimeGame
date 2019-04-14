@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7377387230320692415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7377387230320692412}
+  - component: {fileID: 7377387230320692413}
+  m_Layer: 0
+  m_Name: TestItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7377387230320692412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377387230320692415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7377387230320692413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377387230320692415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75951874fb41bc4b8129c3e5fecf934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonItems:
+  - {fileID: 2083175899701725664, guid: c31ec98bb2aceb34a970c6201a618c25, type: 3}
+  - {fileID: 7564388860565338413, guid: 323bd4b8f0104e841916aeea6a13bedc, type: 3}
+  - {fileID: 668502017709521537, guid: ed138d8fc91dcfe4b99e0465f211a9f8, type: 3}
+  - {fileID: 8689732810473008690, guid: e35bb04decba0794caa518fd76a0eb79, type: 3}
+  - {fileID: 6841220387395073479, guid: 43d4ffe1aef617c48b2b6091a1fbe362, type: 3}
+  - {fileID: 8999221781232189375, guid: 2edad6cc7d8cfb341b1bc87f69214370, type: 3}
+  - {fileID: 6119427146191544770, guid: 2a5eef7a4691c36459ccf38df07639ae, type: 3}
+  rareItems:
+  - {fileID: 8157885826559277217, guid: 6a89b438d37e0bb4187969a2fd37eca9, type: 3}
+  - {fileID: 4292200469127030939, guid: aa70953f800ed2845abf895acfbb9463, type: 3}
+  epicItems:
+  - {fileID: 8956886856357583579, guid: 9535af708482f2f42b405806e24803cf, type: 3}
+  - {fileID: 4292200469127030939, guid: aa70953f800ed2845abf895acfbb9463, type: 3}
+  legendaryItems:
+  - {fileID: 4664599566927197329, guid: fe676a9a9e8cf7d4bb1f1b99216d3486, type: 3}
+  spawnDelay: 3

@@ -14,20 +14,14 @@ public class ItemSpawner : MonoBehaviour
 
 	private int diceRoll = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
-		spawnTimer += Time.deltaTime;
-		if (spawnTimer >= spawnDelay)
-		{
-			SpawnItem(transform.position, transform.rotation);
-			spawnTimer = 0;
-		}
+		//spawnTimer += Time.deltaTime;
+		//if (spawnTimer >= spawnDelay)
+		//{
+		//	SpawnItem(transform.position, transform.rotation);
+		//	spawnTimer = 0;
+		//}
 	}
 
 	public void SpawnItem(Vector3 position, Quaternion rotation)
@@ -46,7 +40,7 @@ public class ItemSpawner : MonoBehaviour
 	private void SpawnLegendary(Vector3 position, Quaternion rotation)
 	{
 		if (legendaryItems.Count != 0)
-			Instantiate(legendaryItems[Random.Range(0, legendaryItems.Count - 1)], position, rotation);
+			Instantiate(legendaryItems[Random.Range(0, legendaryItems.Count)], position, rotation);
 		else
 			SpawnEpic(position, rotation);
 	}
@@ -54,7 +48,7 @@ public class ItemSpawner : MonoBehaviour
 	private void SpawnEpic(Vector3 position, Quaternion rotation)
 	{
 		if (epicItems.Count != 0)
-			Instantiate(epicItems[Random.Range(0, epicItems.Count - 1)], position, rotation);
+			Instantiate(epicItems[Random.Range(0, epicItems.Count)], position, rotation);
 		else
 			SpawnRare(position, rotation);
 	}
@@ -62,13 +56,13 @@ public class ItemSpawner : MonoBehaviour
 	private void SpawnRare(Vector3 position, Quaternion rotation)
 	{
 		if (rareItems.Count != 0)
-			Instantiate(rareItems[Random.Range(0, rareItems.Count - 1)], position, rotation);
+			Instantiate(rareItems[Random.Range(0, rareItems.Count)], position, rotation);
 		else
 			SpawnCommon(position, rotation);
 	}
 
 	private void SpawnCommon(Vector3 position, Quaternion rotation)
 	{
-		Instantiate(commonItems[Random.Range(0, commonItems.Count - 1)], position, rotation);
+		Instantiate(commonItems[Random.Range(0, commonItems.Count)], position, rotation);
 	}
 }

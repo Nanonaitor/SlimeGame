@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour, IDamageable
+public abstract class Health : PooledObject, IDamageable
 {
 	[SerializeField] private int health;
 	[SerializeField] private int maxHealth;
 
     public int CurrentHealth { get => health; set => health = value; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+
+    private void OnEnable()
+    {
+        health = maxHealth;
+    }
 
     void Start()
     {

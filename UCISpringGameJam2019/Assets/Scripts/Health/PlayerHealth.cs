@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health
 {
@@ -19,9 +20,7 @@ public class PlayerHealth : Health
         
         if(CurrentHealth <= 0)
         {
-            //GameOver Logic
-            SetHealth(0);
-            Debug.Log("GameOver");
+            GameOver();
         }
 
         UpdateHealthUI(CurrentHealth, MaxHealth);
@@ -32,4 +31,18 @@ public class PlayerHealth : Health
 		base.AddHealth(damageTaken);
 		UpdateHealthUI(CurrentHealth, MaxHealth);
 	}
+
+    void GameOver()
+    {
+        EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
+        foreach (var item in enemies)
+        {
+            item.Die();
+        }
+
+        EnemySpawner spawner = FindObjectOfType<EnemySpawner>();
+        spawner.canSpawn = false;
+
+        SceneManager.LoadScene(0);
+    }
 }
