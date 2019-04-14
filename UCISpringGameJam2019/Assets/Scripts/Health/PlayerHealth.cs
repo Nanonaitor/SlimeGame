@@ -46,6 +46,6 @@ public class PlayerHealth : Health
         EnemySpawner spawner = FindObjectOfType<EnemySpawner>();
         spawner.canSpawn = false;
 
-        SceneManager.LoadScene("GameOverScreen");
+        SceneManager.LoadScene(0);
     }
 }
