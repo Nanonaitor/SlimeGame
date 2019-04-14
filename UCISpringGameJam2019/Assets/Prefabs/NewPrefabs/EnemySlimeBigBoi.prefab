@@ -146,12 +146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyProjectile: {fileID: 5117879704003603839, guid: 2a11ee6bf038b814db57048acb40ff57,
     type: 3}
-  shootPoint: {fileID: 9189950005833702424}
+  shootPoint: {fileID: 0}
   damage: 10
   attackSpeed: 1
   bulletSpeed: 5
-  attackRange: 55
-  aggroRange: 73.21
+  attackRange: 22
+  aggroRange: 26.6
   ready: 0
 --- !u!195 &6610504953560050051
 NavMeshAgent:
