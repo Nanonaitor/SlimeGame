@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 10
     m_Resolution: 2
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: fac7388593a8a4840b610d31f3235c9b,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -654,7 +655,7 @@ PrefabInstance:
     - target: {fileID: 8662080874770162240, guid: a4b66c04937358b49b54519941848fcc,
         type: 3}
       propertyPath: objectSpawns.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8662080874770162240, guid: a4b66c04937358b49b54519941848fcc,
         type: 3}
@@ -670,6 +671,22 @@ PrefabInstance:
     - target: {fileID: 8662080874770162240, guid: a4b66c04937358b49b54519941848fcc,
         type: 3}
       propertyPath: objectSpawns.Array.data[2].amount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662080874770162240, guid: a4b66c04937358b49b54519941848fcc,
+        type: 3}
+      propertyPath: objectSpawns.Array.data[3].objectName
+      value: EnemyDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662080874770162240, guid: a4b66c04937358b49b54519941848fcc,
+        type: 3}
+      propertyPath: objectSpawns.Array.data[3].objectToSpawn
+      value: 
+      objectReference: {fileID: 3452906283205611813, guid: a9e030c40a97fc243bfc612c74193366,
+        type: 3}
+    - target: {fileID: 8662080874770162240, guid: a4b66c04937358b49b54519941848fcc,
+        type: 3}
+      propertyPath: objectSpawns.Array.data[3].amount
       value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []

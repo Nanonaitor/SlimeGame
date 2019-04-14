@@ -236,6 +236,8 @@ MonoBehaviour:
   maxHealth: 2
   itemSpawner: {fileID: 0}
   anim: {fileID: 3452906283154064078}
+  deathBoi: {fileID: 6147641933071658012, guid: f7b6ea905e7962d489e7e58551b4ccce,
+    type: 3}
 --- !u!54 &3452906283205611812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,7 +273,7 @@ MonoBehaviour:
   attackSpeed: 1
   bulletSpeed: 5
   attackRange: 20
-  aggroRange: 30
+  aggroRange: 40
   ready: 0
 --- !u!195 &830039757
 NavMeshAgent:

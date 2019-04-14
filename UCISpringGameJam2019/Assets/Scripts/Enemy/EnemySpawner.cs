@@ -78,6 +78,7 @@ public class EnemySpawner : MonoBehaviour
 
         EnemyHealth eHealth = newEnemy.GetComponent<EnemyHealth>();
         eHealth.itemSpawner = itemSpawner;
+        eHealth.anim.SetTrigger("Idle");
 
         AI ai = newEnemy.GetComponent<AI>();
         ai.SetPlayer(player);

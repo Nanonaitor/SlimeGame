@@ -7,6 +7,8 @@ public class EnemyHealth : Health
     public ItemSpawner itemSpawner;
     public Animator anim;
 
+    public PooledObject deathBoi;
+
     public override void RemoveHealth(int damageTaken)
     {
         base.RemoveHealth(damageTaken);
@@ -22,6 +24,11 @@ public class EnemyHealth : Health
     public void Die()
     {
         itemSpawner.SpawnItem(transform.position, Quaternion.identity);
+
+        var deathbody = deathBoi.GetPooledInstance<PooledObject>();
+        deathbody.transform.position = transform.position;
+        deathbody.transform.rotation = transform.rotation;
+
         ReturnToPool();
     }
 }
