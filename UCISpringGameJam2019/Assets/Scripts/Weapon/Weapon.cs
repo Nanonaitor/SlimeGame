@@ -9,13 +9,17 @@ public class Weapon : MonoBehaviour
 
     float shootTimer;
 
-	[SerializeField] private WeaponData bulletData;
-	public WeaponData BulletData { get => bulletData; set => bulletData = value; }
+	[SerializeField] private WeaponData initialWeaponData;
+	private WeaponData currentWeaponData;
+	public WeaponData WeaponData { get => initialWeaponData; set => initialWeaponData = value; }
+
+	List<WeaponData> items = new List<WeaponData>();
 
 	private void Start()
     {
-		bulletData = new WeaponData(bulletData);
-        shootTimer = bulletData.AttackSpeed;
+		initialWeaponData = new WeaponData(initialWeaponData);
+		currentWeaponData = WeaponData;
+        shootTimer = currentWeaponData.AttackSpeed;
     }
 
     private void Update()
@@ -25,7 +29,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        if(shootTimer >= bulletData.AttackSpeed)
+        if(shootTimer >= currentWeaponData.AttackSpeed)
         {
             shootTimer = 0;
 
@@ -36,8 +40,47 @@ public class Weapon : MonoBehaviour
             Bullet newBullet = projectile.GetComponent<Bullet>();
 
             newBullet.BulletPrefab = bullet;
-            newBullet.InitBullet(bulletData);
+            newBullet.InitBullet(currentWeaponData);
             newBullet.StartBullet();
         }
     }
+
+	public void AddItem(WeaponData item)
+	{
+		items.Add(item);
+		UpdateStats();
+	}
+
+	private void UpdateStats()
+	{
+		currentWeaponData = initialWeaponData;
+		foreach (WeaponData item in items)
+		{
+			currentWeaponData.Damage *= item.Damage;
+			currentWeaponData.AttackSpeed *= item.AttackSpeed;
+			currentWeaponData.BulletSpeed *= item.BulletSpeed;
+			currentWeaponData.BulletSize *= item.BulletSize;
+			currentWeaponData.SplitNum += item.SplitNum;
+			currentWeaponData.SplitLives += item.SplitLives;
+			currentWeaponData.SplitAngle += item.SplitAngle;
+			currentWeaponData.SplitDelay *= item.SplitDelay;
+			currentWeaponData.LeachAmount += item.LeachAmount;
+			if (item.CanPierce)
+				currentWeaponData.CanPierce = true;
+			if (item.CanBounce)
+				currentWeaponData.CanBounce = true;
+			if (item.CanExplode)
+			{
+				currentWeaponData.CanExplode = true;
+				currentWeaponData.ExplosionRadius *= item.ExplosionRadius;
+			}
+			if (item.CanHome)
+			{
+				currentWeaponData.CanHome = true;
+				currentWeaponData.HomingRadius *= item.HomingRadius;
+				currentWeaponData.HomingStrength *= item.HomingStrength;
+			}
+			currentWeaponData.SpiralStrength += item.SpiralStrength;
+		}
+	}
 }
