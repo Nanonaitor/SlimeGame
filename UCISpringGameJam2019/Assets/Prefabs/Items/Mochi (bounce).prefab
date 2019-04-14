@@ -157,6 +157,7 @@ MonoBehaviour:
     SplitDelay: 1
     CanPierce: 0
     CanBounce: 1
+    BounceNum: 1
     HealthTarget: {fileID: 0}
     LeachAmount: 0
     CanExplode: 0

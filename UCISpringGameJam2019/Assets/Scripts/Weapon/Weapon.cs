@@ -68,7 +68,10 @@ public class Weapon : MonoBehaviour
 			if (item.CanPierce)
 				currentWeaponData.CanPierce = true;
 			if (item.CanBounce)
+			{
 				currentWeaponData.CanBounce = true;
+				currentWeaponData.BounceNum += item.BounceNum;
+			}
 			if (item.CanExplode)
 			{
 				currentWeaponData.CanExplode = true;

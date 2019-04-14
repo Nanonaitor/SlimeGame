@@ -19,6 +19,7 @@ public struct WeaponData
 	public bool CanPierce;
 	[Header("Bouncing")]
 	public bool CanBounce;
+	public int BounceNum;
 	[Header("LifeLeach")]
 	public Health HealthTarget;
 	public int LeachAmount;
@@ -49,6 +50,7 @@ public struct WeaponData
 		DestroyDelay = bulletData.DestroyDelay;
 		CanPierce = bulletData.CanPierce;
         CanBounce = bulletData.CanBounce;
+		BounceNum = bulletData.BounceNum;
 		HealthTarget = bulletData.HealthTarget;
 		LeachAmount = bulletData.LeachAmount;
 		CanExplode = bulletData.CanExplode;
