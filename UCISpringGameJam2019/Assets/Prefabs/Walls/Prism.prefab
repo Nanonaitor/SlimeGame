@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7571793277587522550}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.5011339, y: 0.8267565, z: 0.33041668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &528025934535887845
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -245,7 +245,25 @@ MonoBehaviour:
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  m_Colors: []
+  m_Colors:
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
+  - {r: 0.667, g: 0.667, b: 0.667, a: 1}
   m_UnwrapParameters:
     m_HardAngle: 88
     m_PackMargin: 20
@@ -256,7 +274,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedVertices: 00000000
 --- !u!64 &7764191560364621053
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -269,5 +287,5 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 12
   m_Mesh: {fileID: 0}
