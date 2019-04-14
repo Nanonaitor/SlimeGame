@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     private LayerMask groundMask;
 
+    private AudioSource myAudio;
+
     public PlayerMotor Motor { get => motor; set => motor = value; }
 
     void Start()
@@ -19,6 +21,8 @@ public class Player : MonoBehaviour
         Motor = new PlayerMotor(controller, Motor, transform);
 
         groundMask = LayerMask.GetMask("Ground");
+
+        myAudio = GetComponent<AudioSource>();
     }
 
     void Update()
