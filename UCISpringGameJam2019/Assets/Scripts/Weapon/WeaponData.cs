@@ -8,6 +8,7 @@ public struct WeaponData
     [HideInInspector] public Vector3 BulletDirection;
 	public float AttackSpeed;
 	public float BulletSpeed;
+	public Vector3 InitialBulletSize;
 	public float BulletSize;
 	[Header("Fractal")]
 	public int SplitNum;
@@ -39,6 +40,7 @@ public struct WeaponData
         BulletDirection = bulletData.BulletDirection;
 		AttackSpeed = bulletData.AttackSpeed;
 		BulletSpeed = bulletData.BulletSpeed;
+		InitialBulletSize = bulletData.InitialBulletSize;
 		BulletSize = bulletData.BulletSize;
 		SplitNum = bulletData.SplitNum;
 		SplitLives = bulletData.SplitLives;

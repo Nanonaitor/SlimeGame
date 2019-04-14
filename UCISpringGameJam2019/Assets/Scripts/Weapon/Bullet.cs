@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : PooledObject
 {
     [SerializeField] private WeaponData weaponData;
-    public WeaponData BulletData { get => weaponData; set => weaponData = value; }
+    public WeaponData WeaponData { get => weaponData; set => weaponData = value; }
     private PooledObject bulletPrefab;
     public PooledObject BulletPrefab { get => bulletPrefab; set => bulletPrefab = value; }
 
@@ -14,6 +14,7 @@ public class Bullet : PooledObject
         if (gameObject.activeSelf)
         {
             weaponData.BulletDirection = Vector3.forward;
+			transform.localScale *= weaponData.BulletSize;
 
             if (weaponData.DestroyDelay > 0)
                 StartCoroutine(DelayedDestroyBullet());
@@ -33,15 +34,15 @@ public class Bullet : PooledObject
     void Update()
     {
         transform.Translate(weaponData.BulletDirection * weaponData.BulletSpeed * Time.deltaTime);
-		if (BulletData.CanHome && BulletData.HomingTarget != null)
+		if (WeaponData.CanHome && WeaponData.HomingTarget != null)
 		{
-			if (Vector3.Distance(transform.position, BulletData.HomingTarget.position) < 2)
+			if (Vector3.Distance(transform.position, WeaponData.HomingTarget.position) < 2)
 			{
-				transform.LookAt(BulletData.HomingTarget);
+				transform.LookAt(WeaponData.HomingTarget);
 			}
 			else
 			{
-				Vector3 direction = (BulletData.HomingTarget.position - transform.position).normalized;
+				Vector3 direction = (WeaponData.HomingTarget.position - transform.position).normalized;
 				Quaternion lookRotation = Quaternion.LookRotation(direction);
 				transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * weaponData.HomingStrength);
 			}
@@ -92,7 +93,7 @@ public class Bullet : PooledObject
 			if (weaponData.CanExplode)
 				EXXUUPLOSION();
 			else
-				other.gameObject.ApplyDamage(BulletData.Damage);
+				other.gameObject.ApplyDamage(WeaponData.Damage);
 			if (weaponData.HealthTarget != null && weaponData.LeachAmount != 0)
 				weaponData.HealthTarget.AddHealth(weaponData.LeachAmount);
             if (!weaponData.CanPierce || weaponData.CanHome)
@@ -114,9 +115,9 @@ public class Bullet : PooledObject
 		{
 			if (hitColliders[i].CheckLayer("Enemy"))
 			{
-				if (BulletData.HomingTarget != null)
+				if (WeaponData.HomingTarget != null)
 				{
-					if (Vector3.Distance(transform.position, hitColliders[i].transform.position) < Vector3.Distance(transform.position, BulletData.HomingTarget.position))
+					if (Vector3.Distance(transform.position, hitColliders[i].transform.position) < Vector3.Distance(transform.position, WeaponData.HomingTarget.position))
 						weaponData.HomingTarget = hitColliders[i].transform;
 				}
 				else
@@ -155,7 +156,8 @@ public class Bullet : PooledObject
         {
             var splitBullet = bulletPrefab.GetPooledInstance<PooledObject>();
             splitBullet.transform.position = transform.position;
-            Quaternion newRot = transform.rotation * Quaternion.Euler(0, initialAngle + i * stepAngle, 0);
+			splitBullet.transform.localScale = weaponData.InitialBulletSize * weaponData.BulletSize;
+			Quaternion newRot = transform.rotation * Quaternion.Euler(0, initialAngle + i * stepAngle, 0);
             splitBullet.transform.rotation = newRot;
 
             Bullet b = splitBullet.GetComponent<Bullet>();

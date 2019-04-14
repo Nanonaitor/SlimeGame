@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
     float shootTimer;
 
 	[SerializeField] private WeaponData initialWeaponData;
-	private WeaponData currentWeaponData;
+	[SerializeField] private WeaponData currentWeaponData;
 	public WeaponData WeaponData { get => initialWeaponData; set => initialWeaponData = value; }
 
 	List<WeaponData> items = new List<WeaponData>();
@@ -34,7 +34,8 @@ public class Weapon : MonoBehaviour
             shootTimer = 0;
 
             var projectile = bullet.GetPooledInstance<PooledObject>();
-            projectile.gameObject.transform.position = shootPoint.transform.position;
+			projectile.gameObject.transform.localScale = currentWeaponData.InitialBulletSize * currentWeaponData.BulletSize;
+			projectile.gameObject.transform.position = shootPoint.transform.position;
             projectile.gameObject.transform.rotation = shootPoint.transform.rotation;
 
             Bullet newBullet = projectile.GetComponent<Bullet>();
