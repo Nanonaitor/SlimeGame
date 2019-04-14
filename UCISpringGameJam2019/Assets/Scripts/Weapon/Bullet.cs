@@ -96,8 +96,10 @@ public class Bullet : PooledObject
 				other.gameObject.ApplyDamage(WeaponData.Damage);
 			if (weaponData.HealthTarget != null && weaponData.LeachAmount != 0)
 				weaponData.HealthTarget.AddHealth(weaponData.LeachAmount);
-            if (!weaponData.CanPierce || weaponData.CanHome)
-                ReturnToPool();
+			if ((weaponData.CanPierce && weaponData.CanHome) || weaponData.PierceNum <= 0)
+				ReturnToPool();
+			else
+				--weaponData.PierceNum;
         }
         else if (other.CheckLayer("Environment") && !weaponData.CanBounce)
         {

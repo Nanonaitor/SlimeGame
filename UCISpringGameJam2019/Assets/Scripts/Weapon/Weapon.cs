@@ -66,7 +66,10 @@ public class Weapon : MonoBehaviour
 			currentWeaponData.SplitAngle += item.SplitAngle;
 			currentWeaponData.LeachAmount += item.LeachAmount;
 			if (item.CanPierce)
+			{
 				currentWeaponData.CanPierce = true;
+				currentWeaponData.PierceNum += item.PierceNum;
+			}
 			if (item.CanBounce)
 			{
 				currentWeaponData.CanBounce = true;

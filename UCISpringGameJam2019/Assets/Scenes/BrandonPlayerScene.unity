@@ -1979,6 +1979,11 @@ PrefabInstance:
       propertyPath: initialWeaponData.HealthTarget
       value: 
       objectReference: {fileID: 1525728378}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: currentWeaponData.Damage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4688746850a9244ba9e9db1fc12c08, type: 3}
 --- !u!1001 &3452906283015094655

@@ -17,6 +17,7 @@ public struct WeaponData
 	public float SplitDelay;
 	[Header("Piercing")]
 	public bool CanPierce;
+	public int PierceNum;
 	[Header("Bouncing")]
 	public bool CanBounce;
 	public int BounceNum;
@@ -49,6 +50,7 @@ public struct WeaponData
 		SplitDelay = bulletData.SplitDelay;
 		DestroyDelay = bulletData.DestroyDelay;
 		CanPierce = bulletData.CanPierce;
+		PierceNum = bulletData.PierceNum;
         CanBounce = bulletData.CanBounce;
 		BounceNum = bulletData.BounceNum;
 		HealthTarget = bulletData.HealthTarget;

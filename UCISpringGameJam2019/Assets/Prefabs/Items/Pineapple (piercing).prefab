@@ -79,7 +79,9 @@ MonoBehaviour:
     SplitAngle: 0
     SplitDelay: 0
     CanPierce: 1
+    PierceNum: 1
     CanBounce: 0
+    BounceNum: 0
     HealthTarget: {fileID: 0}
     LeachAmount: 0
     CanExplode: 0
