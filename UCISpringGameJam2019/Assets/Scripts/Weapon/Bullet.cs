@@ -89,7 +89,6 @@ public class Bullet : PooledObject
     {
         if(other.CheckLayer("Enemy"))
         {
-			Debug.Log("hit enemy");
 			if (weaponData.CanExplode)
 				EXXUUPLOSION();
 			else

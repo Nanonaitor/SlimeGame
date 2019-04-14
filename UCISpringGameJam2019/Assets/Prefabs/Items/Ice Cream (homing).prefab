@@ -86,8 +86,8 @@ MonoBehaviour:
     ExplosionRadius: 0
     CanHome: 1
     HomingTarget: {fileID: 0}
-    HomingRadius: 5
-    HomingStrength: 3
+    HomingRadius: 2
+    HomingStrength: 2
     SpiralStrength: 0
     DestroyDelay: 0
 --- !u!1001 &6081581341955765579

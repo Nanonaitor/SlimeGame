@@ -81,7 +81,7 @@ MonoBehaviour:
     CanPierce: 0
     CanBounce: 0
     HealthTarget: {fileID: 0}
-    LeachAmount: 10
+    LeachAmount: 1
     CanExplode: 0
     ExplosionRadius: 0
     CanHome: 0

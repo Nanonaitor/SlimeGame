@@ -26,4 +26,10 @@ public class PlayerHealth : Health
 
         UpdateHealthUI(CurrentHealth, MaxHealth);
     }
+
+	public override void AddHealth(int damageTaken)
+	{
+		base.AddHealth(damageTaken);
+		UpdateHealthUI(CurrentHealth, MaxHealth);
+	}
 }
