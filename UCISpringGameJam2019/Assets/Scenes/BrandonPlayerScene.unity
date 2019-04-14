@@ -804,6 +804,134 @@ MonoBehaviour:
   zoomRate: 45
   cameraHeight: 10.5
   xAngle: 78.2
+--- !u!1 &933511700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933511704}
+  - component: {fileID: 933511703}
+  - component: {fileID: 933511702}
+  - component: {fileID: 933511701}
+  - component: {fileID: 933511705}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &933511701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933511700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &933511702
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933511700}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 70114ae72fd6ae14f96fc49241d8bd88, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &933511703
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933511700}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &933511704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933511700}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.83, z: 3.08}
+  m_LocalScale: {x: 1.6804, y: 1.6804, z: 1.6804}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933511705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933511700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44f692b171d7694dad0267eb3b52246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  attackSpeed: 0
+  bulletSpeed: 0
+  splitNum: 0
+  splitDelay: 0
+  splitLives: 0
+  splitAngle: 0
+  canPierce: 0
+  canBounce: 0
+  healthTarget: {fileID: 0}
+  leachAmount: 0
+  canExplode: 0
+  explosionRadius: 0
+  canHome: 0
+  homingTarget: {fileID: 0}
+  homingRadius: 0
+  homingStrength: 0
+  spiralStrength: 0
+--- !u!4 &1138219736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3421467163026822305, guid: fc4688746850a9244ba9e9db1fc12c08,
+    type: 3}
+  m_PrefabInstance: {fileID: 3421467162052367776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1184752251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1130,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1525728378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3421467162264278658, guid: fc4688746850a9244ba9e9db1fc12c08,
+    type: 3}
+  m_PrefabInstance: {fileID: 3421467162052367776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4fc1d417d5dcf49bf013e892086210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1713611539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1263,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1883252487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3421467162605943855, guid: fc4688746850a9244ba9e9db1fc12c08,
+    type: 3}
+  m_PrefabInstance: {fileID: 3421467162052367776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1883252493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883252487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181782f481ec860499a2da53efcc8335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5602735258424048687, guid: a1fe9225eaf4f154b89518154c22d3f2, type: 3}
+  shootPoint: {fileID: 1138219736}
+  bulletData:
+    Damage: 0
+    BulletDirection: {x: 0, y: 0, z: 0}
+    AttackSpeed: 0.2
+    BulletSpeed: 10
+    BulletSize: 0
+    SplitNum: 0
+    SplitLives: 0
+    SplitAngle: 0
+    SplitDelay: 0
+    CanPierce: 0
+    CanBounce: 0
+    HealthTarget: {fileID: 0}
+    LeachAmount: 0
+    CanExplode: 0
+    ExplosionRadius: 0
+    CanHome: 0
+    HomingTarget: {fileID: 0}
+    HomingRadius: 10
+    HomingStrength: 3
+    SpiralStrength: 0
+    DestroyDelay: 10
 --- !u!1 &1904475888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1617,92 @@ PrefabInstance:
     - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
         type: 3}
       propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: splitLives
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: canBounce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.Damage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.BulletSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.AttackSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.CanBounce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.DestroyDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.SplitNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.SplitLives
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.SplitAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.SplitDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.CanPierce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.HealthTarget
+      value: 
+      objectReference: {fileID: 1525728378}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.LeachAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.CanHome
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.HomingRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421467162605943860, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: bulletData.HomingStrength
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4688746850a9244ba9e9db1fc12c08, type: 3}

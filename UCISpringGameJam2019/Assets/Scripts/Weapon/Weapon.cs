@@ -7,38 +7,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] private PooledObject bullet;
     [SerializeField] private Transform shootPoint;
 
-    [Header("Weapon Stats")]
-    [SerializeField] private int damage;
-    [SerializeField] private float attackSpeed;
-    [SerializeField] private float bulletSpeed;
-    [Header("Fractal")]
-    [SerializeField] private int splitNum;
-    [SerializeField] private float splitDelay;
-    [SerializeField] private int splitLives;
-    [SerializeField] private float splitAngle;
-    [Header("Piercing")]
-    [SerializeField] private bool canPierce;
-    [Header("Bouncing")]
-    [SerializeField] private bool canBounce;
-	[Header("LifeLeach")]
-	[SerializeField] private Health healthTarget;
-	[SerializeField] private int leachAmount;
-	[Header("EXXUUPLOSION")]
-	[SerializeField] private bool canExplode;
-	[SerializeField] private float explosionRadius;
-	[Header("Homing")]
-	[SerializeField] private bool canHome;
-	[SerializeField] private Transform homingTarget;
-	[SerializeField] private float homingRadius;
-	[SerializeField] private float homingStrength;
-	[Header("Spiral")]
-	[SerializeField] private float spiralStrength;
-
     float shootTimer;
 
-    private void Start()
+	[SerializeField] private WeaponData bulletData;
+	public WeaponData BulletData { get => bulletData; set => bulletData = value; }
+
+	private void Start()
     {
-        shootTimer = attackSpeed;
+		bulletData = new WeaponData(bulletData);
+        shootTimer = bulletData.AttackSpeed;
     }
 
     private void Update()
@@ -48,7 +25,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        if(shootTimer >= attackSpeed)
+        if(shootTimer >= bulletData.AttackSpeed)
         {
             shootTimer = 0;
 
@@ -57,29 +34,9 @@ public class Weapon : MonoBehaviour
             projectile.gameObject.transform.rotation = shootPoint.transform.rotation;
 
             Bullet newBullet = projectile.GetComponent<Bullet>();
-            
-            BulletData newData = default;
-            newData.Damage = damage;
-            newData.Speed = bulletSpeed;
-            newData.SplitDelay = splitDelay;
-            newData.SplitAngle = splitAngle;
-            newData.SplitLives = splitLives;
-            newData.SplitNum = splitNum;
-            newData.CanPierce = canPierce;
-            newData.CanBounce = canBounce;
-			newData.HealthTarget = healthTarget;
-			newData.LeachAmount = leachAmount;
-			newData.CanExplode = canExplode;
-			newData.ExplosionRadius = explosionRadius;
-			newData.CanHome = canHome;
-			newData.HomingTarget = homingTarget;
-			newData.HomingRadius = homingRadius;
-			newData.HomingStrength = homingStrength;
-			newData.SpiralStrength = spiralStrength;
-            newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;
-            newBullet.InitBullet(newData);
+            newBullet.InitBullet(bulletData);
             newBullet.StartBullet();
         }
     }
