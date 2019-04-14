@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44f692b171d7694dad0267eb3b52246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300024, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
   weaponData:
     Damage: 0
     BulletDirection: {x: 0, y: 0, z: 0}
@@ -99,10 +100,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4664599566927197322}
     m_Modifications:
-    - target: {fileID: 1000013122234568, guid: 87a32384fe2633648996ab825d5f4b5b, type: 3}
-      propertyPath: m_Name
-      value: IceCream_Cone
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010356322748, guid: 87a32384fe2633648996ab825d5f4b5b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -158,6 +155,10 @@ PrefabInstance:
     - target: {fileID: 4000010356322748, guid: 87a32384fe2633648996ab825d5f4b5b, type: 3}
       propertyPath: m_LocalScale.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013122234568, guid: 87a32384fe2633648996ab825d5f4b5b, type: 3}
+      propertyPath: m_Name
+      value: IceCream_Cone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a32384fe2633648996ab825d5f4b5b, type: 3}

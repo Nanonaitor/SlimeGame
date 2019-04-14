@@ -12,8 +12,11 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private WeaponData initialWeaponData;
 	[SerializeField] private WeaponData currentWeaponData;
 	public WeaponData WeaponData { get => initialWeaponData; set => initialWeaponData = value; }
+	public List<Sprite> ItemIcons { get => itemIcons; set => itemIcons = value; }
 
-	List<WeaponData> items = new List<WeaponData>();
+	private List<WeaponData> items = new List<WeaponData>();
+
+	private List<Sprite> itemIcons = new List<Sprite>();
 
 	private void Start()
     {

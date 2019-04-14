@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1.35
+  healthToAdd: 20
+  itemIcon: {fileID: 21300022, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
 --- !u!1001 &51443377096597011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,10 +77,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6841220387395073483}
     m_Modifications:
-    - target: {fileID: 1000011216760202, guid: 78a6a596f3cdc2641b44bb3d371c8db0, type: 3}
-      propertyPath: m_Name
-      value: Watermelon
-      objectReference: {fileID: 0}
     - target: {fileID: 4000012037240470, guid: 78a6a596f3cdc2641b44bb3d371c8db0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -134,6 +132,10 @@ PrefabInstance:
     - target: {fileID: 4000012037240470, guid: 78a6a596f3cdc2641b44bb3d371c8db0, type: 3}
       propertyPath: m_LocalScale.z
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011216760202, guid: 78a6a596f3cdc2641b44bb3d371c8db0, type: 3}
+      propertyPath: m_Name
+      value: Watermelon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a6a596f3cdc2641b44bb3d371c8db0, type: 3}

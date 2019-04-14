@@ -6,9 +6,12 @@ public class PlayerAttributeItem : MonoBehaviour
 {
 	[SerializeField] private float movementSpeed = 1;
 	[SerializeField] private int healthToAdd = 20;
+	[SerializeField] private Sprite itemIcon;
 
-    // Start is called before the first frame update
-    void Start()
+	public Sprite ItemIcon { get => itemIcon; set => itemIcon = value; }
+
+	// Start is called before the first frame update
+	void Start()
     {
         
     }
@@ -20,6 +23,7 @@ public class PlayerAttributeItem : MonoBehaviour
 			other.gameObject.GetComponent<Player>().Motor.Speed *= movementSpeed;
 			other.gameObject.GetComponent<PlayerHealth>().MaxHealth += healthToAdd;
 			other.gameObject.GetComponent<PlayerHealth>().AddHealth(0);
+			other.GetComponentInChildren<Weapon>().ItemIcons.Add(ItemIcon);
 		}
 		Destroy(gameObject);
 	}

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+	[SerializeField] private Sprite itemIcon;
 	[SerializeField] private WeaponData weaponData;
 	public WeaponData BulletData { get => weaponData; set => weaponData = value; }
+	public Sprite ItemIcon { get => itemIcon; set => itemIcon = value; }
 
 	private void Start()
 	{
@@ -17,6 +19,7 @@ public class Item : MonoBehaviour
 		if (other.CheckLayer("Player"))
 		{
 			other.GetComponentInChildren<Weapon>().AddItem(weaponData);
+			other.GetComponentInChildren<Weapon>().ItemIcons.Add(ItemIcon);
 		}
 		Destroy(gameObject);
 	}
