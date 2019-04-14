@@ -23,7 +23,10 @@ public class EnemyHealth : Health
 
     public void Die()
     {
-        itemSpawner.SpawnItem(transform.position, Quaternion.identity);
+		if (itemSpawner != null)
+		{
+			itemSpawner.SpawnItem(transform.position, Quaternion.identity);
+		}
 
         var deathbody = deathBoi.GetPooledInstance<PooledObject>();
         deathbody.transform.position = transform.position;
