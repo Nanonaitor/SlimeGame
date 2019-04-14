@@ -33,7 +33,6 @@ public class Bullet : PooledObject
     void Update()
     {
         transform.Translate(bulletData.BulletDirection * bulletData.Speed * Time.deltaTime);
-		transform.rotation = transform.rotation * Quaternion.Euler(0, bulletData.SpiralStrength, 0);
 		if (BulletData.CanHome && BulletData.HomingTarget != null)
 		{
 			if (Vector3.Distance(transform.position, BulletData.HomingTarget.position) < 2)
@@ -46,6 +45,10 @@ public class Bullet : PooledObject
 				Quaternion lookRotation = Quaternion.LookRotation(direction);
 				transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * bulletData.HomingStrength);
 			}
+		}
+		else
+		{
+			transform.rotation = transform.rotation * Quaternion.Euler(0, bulletData.SpiralStrength, 0);
 		}
 	}
 

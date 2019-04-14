@@ -36,9 +36,28 @@ public class Weapon : MonoBehaviour
 
     float shootTimer;
 
-    private void Start()
+	public int Damage { get => damage; set => damage = value; }
+	public float AttackSpeed { get => attackSpeed; set => attackSpeed = value; }
+	public float BulletSpeed { get => bulletSpeed; set => bulletSpeed = value; }
+	public int SplitNum { get => splitNum; set => splitNum = value; }
+	public float SplitDelay { get => splitDelay; set => splitDelay = value; }
+	public int SplitLives { get => splitLives; set => splitLives = value; }
+	public float SplitAngle { get => splitAngle; set => splitAngle = value; }
+	public bool CanPierce { get => canPierce; set => canPierce = value; }
+	public bool CanBounce { get => canBounce; set => canBounce = value; }
+	public Health HealthTarget { get => healthTarget; set => healthTarget = value; }
+	public int LeachAmount { get => leachAmount; set => leachAmount = value; }
+	public bool CanExplode { get => canExplode; set => canExplode = value; }
+	public float ExplosionRadius { get => explosionRadius; set => explosionRadius = value; }
+	public bool CanHome { get => canHome; set => canHome = value; }
+	public Transform HomingTarget { get => homingTarget; set => homingTarget = value; }
+	public float HomingRadius { get => homingRadius; set => homingRadius = value; }
+	public float HomingStrength { get => homingStrength; set => homingStrength = value; }
+	public float SpiralStrength { get => spiralStrength; set => spiralStrength = value; }
+
+	private void Start()
     {
-        shootTimer = attackSpeed;
+        shootTimer = AttackSpeed;
     }
 
     private void Update()
@@ -48,7 +67,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        if(shootTimer >= attackSpeed)
+        if(shootTimer >= AttackSpeed)
         {
             shootTimer = 0;
 
@@ -59,23 +78,23 @@ public class Weapon : MonoBehaviour
             Bullet newBullet = projectile.GetComponent<Bullet>();
             
             BulletData newData = default;
-            newData.Damage = damage;
-            newData.Speed = bulletSpeed;
-            newData.SplitDelay = splitDelay;
-            newData.SplitAngle = splitAngle;
-            newData.SplitLives = splitLives;
-            newData.SplitNum = splitNum;
-            newData.CanPierce = canPierce;
-            newData.CanBounce = canBounce;
-			newData.HealthTarget = healthTarget;
-			newData.LeachAmount = leachAmount;
-			newData.CanExplode = canExplode;
-			newData.ExplosionRadius = explosionRadius;
-			newData.CanHome = canHome;
-			newData.HomingTarget = homingTarget;
-			newData.HomingRadius = homingRadius;
-			newData.HomingStrength = homingStrength;
-			newData.SpiralStrength = spiralStrength;
+            newData.Damage = Damage;
+            newData.Speed = BulletSpeed;
+            newData.SplitDelay = SplitDelay;
+            newData.SplitAngle = SplitAngle;
+            newData.SplitLives = SplitLives;
+            newData.SplitNum = SplitNum;
+            newData.CanPierce = CanPierce;
+            newData.CanBounce = CanBounce;
+			newData.HealthTarget = HealthTarget;
+			newData.LeachAmount = LeachAmount;
+			newData.CanExplode = CanExplode;
+			newData.ExplosionRadius = ExplosionRadius;
+			newData.CanHome = CanHome;
+			newData.HomingTarget = HomingTarget;
+			newData.HomingRadius = HomingRadius;
+			newData.HomingStrength = HomingStrength;
+			newData.SpiralStrength = SpiralStrength;
             newData.DestroyDelay = 3f; //Change this later?
 
             newBullet.BulletPrefab = bullet;
