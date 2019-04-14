@@ -790,6 +790,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3421467163219565027, guid: fc4688746850a9244ba9e9db1fc12c08,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f11d393ec30b85041a9a55055313713c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4688746850a9244ba9e9db1fc12c08, type: 3}
 --- !u!1 &752434772
@@ -5903,7 +5908,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 24904f6eec8713d4295f58e210c19ee9, type: 2}
+  - {fileID: 2100000, guid: f45ceaa98dd46e340b25a9f1fbdfc30c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11249,7 +11254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783300e5878480640b14efb36fadda47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: GameTest
+  gameScene: FinalScene
 --- !u!114 &2076278898
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,13 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: f7acfee67399b504fb69662d09800a58
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: e30184305b4e2bd46bbcfd41a454cf18
   - enabled: 0
     path: Assets/Scenes/BryanScene.unity
     guid: 7d500fe1d069ac149850517bc4b22f0f
   - enabled: 0
     path: Assets/Scenes/BrandonPlayerScene.unity
     guid: 8f9b3c511017d6742af1d62a8b180e67
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameTest.unity
     guid: 32a76a1d01d61a7409cca4f32da3b44a
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: e67e474ae90c59546b2fbe010f9abf65
+  - enabled: 1
+    path: Assets/Scenes/GameOverScreen.unity
+    guid: e03c202cf904c274f8eda6a2a42fda13
   m_configObjects: {}
