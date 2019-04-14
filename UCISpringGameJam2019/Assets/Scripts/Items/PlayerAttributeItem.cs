@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttributeItem : MonoBehaviour
 {
 	[SerializeField] private float movementSpeed = 1;
+	[SerializeField] private int healthToAdd = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,9 @@ public class PlayerAttributeItem : MonoBehaviour
 	{
 		if (other.CheckLayer("Player"))
 		{
-			other.GetComponentInChildren<Player>().Motor.Speed *= movementSpeed;
+			other.gameObject.GetComponent<Player>().Motor.Speed *= movementSpeed;
+			other.gameObject.GetComponent<PlayerHealth>().MaxHealth += healthToAdd;
+			other.gameObject.GetComponent<PlayerHealth>().AddHealth(0);
 		}
 		Destroy(gameObject);
 	}

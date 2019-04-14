@@ -57,7 +57,7 @@ public class Weapon : MonoBehaviour
 		currentWeaponData = initialWeaponData;
 		foreach (WeaponData item in items)
 		{
-			currentWeaponData.Damage *= item.Damage;
+			currentWeaponData.Damage += item.Damage;
 			currentWeaponData.AttackSpeed *= item.AttackSpeed;
 			currentWeaponData.BulletSpeed *= item.BulletSpeed;
 			currentWeaponData.BulletSize *= item.BulletSize;

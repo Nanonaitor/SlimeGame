@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData:
-    Damage: 1
+    Damage: 0
     BulletDirection: {x: 0, y: 0, z: 0}
     AttackSpeed: 1
     BulletSpeed: 1
@@ -156,6 +156,7 @@ MonoBehaviour:
     SplitAngle: 0
     SplitDelay: 1
     CanPierce: 0
+    PierceNum: 0
     CanBounce: 1
     BounceNum: 1
     HealthTarget: {fileID: 0}
