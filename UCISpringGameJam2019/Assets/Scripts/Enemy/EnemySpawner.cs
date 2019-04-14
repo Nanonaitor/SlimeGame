@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public Transform bigBoiSpawn;
+    public GameObject bigBoi;
+
     public List<Transform> spawnPoints;
     public List<PooledObject> enemies;
     List<Transform> temp;
@@ -28,6 +31,11 @@ public class EnemySpawner : MonoBehaviour
         }
 
         temp = new List<Transform>();
+
+        GameObject big = Instantiate(bigBoi, bigBoiSpawn.position, Quaternion.identity);
+        AI ai = big.GetComponent<AI>();
+        ai.SetPlayer(player);
+        ai.Go();
     }
 
     void Update()

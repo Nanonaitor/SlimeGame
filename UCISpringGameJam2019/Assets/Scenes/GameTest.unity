@@ -1746,6 +1746,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 273255963}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &287050579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 287050580}
+  m_Layer: 0
+  m_Name: BigBoiSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &287050580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287050579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 343.6, y: 1, z: -102.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289544595
 GameObject:
   m_ObjectHideFlags: 0
@@ -10072,6 +10102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3648b72c6fac14f9f1141fa1228b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigBoiSpawn: {fileID: 287050580}
+  bigBoi: {fileID: 8382910585804562020, guid: e6db263d81005bb4a8e7a6645707660a, type: 3}
   spawnPoints:
   - {fileID: 759364225}
   - {fileID: 422199378}
@@ -10859,7 +10891,7 @@ PrefabInstance:
     - target: {fileID: 3421467162264278719, guid: fc4688746850a9244ba9e9db1fc12c08,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 85.2
+      value: 82.4
       objectReference: {fileID: 0}
     - target: {fileID: 3421467162264278719, guid: fc4688746850a9244ba9e9db1fc12c08,
         type: 3}
@@ -10869,7 +10901,7 @@ PrefabInstance:
     - target: {fileID: 3421467162264278719, guid: fc4688746850a9244ba9e9db1fc12c08,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.6
+      value: 12.6
       objectReference: {fileID: 0}
     - target: {fileID: 3421467162264278719, guid: fc4688746850a9244ba9e9db1fc12c08,
         type: 3}
