@@ -24,8 +24,8 @@ public class PlayerAttributeItem : MonoBehaviour
 			other.gameObject.GetComponent<PlayerHealth>().MaxHealth += healthToAdd;
 			other.gameObject.GetComponent<PlayerHealth>().AddHealth(0);
 			other.GetComponentInChildren<Weapon>().ItemIcons.Add(ItemIcon);
+			Destroy(gameObject);
 		}
-		Destroy(gameObject);
 	}
 
 	private void Update()
