@@ -20,8 +20,8 @@ public class Item : MonoBehaviour
 		{
 			other.GetComponentInChildren<Weapon>().AddItem(weaponData);
 			other.GetComponentInChildren<Weapon>().ItemIcons.Add(ItemIcon);
+			Destroy(gameObject);
 		}
-		Destroy(gameObject);
 	}
 
 	private void Update()
