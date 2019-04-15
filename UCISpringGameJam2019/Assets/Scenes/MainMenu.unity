@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783300e5878480640b14efb36fadda47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: FinalScene
+  gameScene: FinalFinalScene
 --- !u!1 &964614577
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '{Game Title}'
+  m_Text: Slime
 --- !u!222 &964614580
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -737,9 +737,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100054, guid: ea2660e7026b05f46a9939d93e8b72ca, type: 3}
-      propertyPath: m_Name
-      value: Lyme
+    - target: {fileID: 9500000, guid: ea2660e7026b05f46a9939d93e8b72ca, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: ea2660e7026b05f46a9939d93e8b72ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -785,9 +785,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: ea2660e7026b05f46a9939d93e8b72ca, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
+    - target: {fileID: 100054, guid: ea2660e7026b05f46a9939d93e8b72ca, type: 3}
+      propertyPath: m_Name
+      value: Lyme
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2660e7026b05f46a9939d93e8b72ca, type: 3}

@@ -25,7 +25,10 @@ public class EnemyHealth : Health
     {
 		if (itemSpawner != null)
 		{
-			itemSpawner.SpawnItem(transform.position, Quaternion.identity);
+			if (Random.Range(0, 2) == 0)
+			{
+				itemSpawner.SpawnItem(transform.position, Quaternion.identity);
+			}
 		}
 
         var deathbody = deathBoi.GetPooledInstance<PooledObject>();
